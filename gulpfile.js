@@ -3,4 +3,4 @@ var requireDir = require('require-dir');
 
 requireDir('./gulp/build', { recurse: true });
 
-gulp.task('default', ['build-style', 'build-style2']);
+gulp.task('default', ['build-style']);
