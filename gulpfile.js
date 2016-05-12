@@ -1,33 +1,6 @@
-var requireDir = require('require-dir');
 var gulp = require('gulp');
-var runSequence = require('run-sequence');
+var requireDir = require('require-dir');
 
-requireDir('./gulp/tasks', { recurse: true });
+requireDir('./gulp/build', { recurse: true });
 
-gulp.task('default', function() {
-	runSequence (
-		'build-dev'
-	// 'clean',
-	// [
-	// 	'style',
-	// 	'scripts'
-	// ],
-	// 'watch',
-	// 'connect'
-	);
-});
-
-gulp.task( 'build-dev', function ()
-{
-	'sass'
-	// runSequence (
-	// 	'clean',
-	// 	[
-	// 		'build-style',
-	// 		'build-scripts',
-	// 		'build-resources'
-	// 	],
-	// 	'build-html',
-	// 	'connect'
-	// );
-});
+gulp.task('default', ['build-style', 'build-style2']);
